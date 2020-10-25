@@ -1,0 +1,36 @@
+schema {
+    query: Query
+    mutation: Mutation
+}
+
+type Query {
+    """
+    Get all books
+    """
+    getBooks: [Book]
+
+    """
+    Get a book by its id
+    """
+    getBookById(id: ID!): Book
+
+    """
+    Get all authors
+    """
+    getAuthors: [Author]
+
+    """
+    Returns author of a book
+    """
+    getAuthorByBookId(id: ID!): Author
+
+    """
+    Returns al books of an author
+    """
+    getBooksByAuthorId(id: ID!): [Book]
+}
+
+type Mutation {
+    createBook(id: String!, title: String!, pageCount: Int!, authorId: String!): Book
+    deleteBook(id: ID!): String
+}

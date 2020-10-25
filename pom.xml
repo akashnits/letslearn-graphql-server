@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<groupId>org.springframework.boot</groupId>
+		<artifactId>spring-boot-starter-parent</artifactId>
+		<version>2.3.4.RELEASE</version>
+		<relativePath/> <!-- lookup parent from repository -->
+	</parent>
+	<groupId>com.letslearn</groupId>
+	<artifactId>letslearn-graphql-server</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+	<name>letslearn-graphql-server</name>
+	<description>Lets Learn demo project for GraphQL APIs using Spring Boot</description>
+
+	<properties>
+		<java.version>1.8</java.version>
+		<graphql.java.version>13.0</graphql.java.version>
+		<graphql.java.spring.boot.starter.webmvc.version>1.0</graphql.java.spring.boot.starter.webmvc.version>
+	</properties>
+
+	<dependencies>
+
+		<dependency>
+			<groupId>org.projectlombok</groupId>
+			<artifactId>lombok</artifactId>
+			<optional>true</optional>
+		</dependency>
+
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-web</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-test</artifactId>
+			<scope>test</scope>
+			<exclusions>
+				<exclusion>
+					<groupId>org.junit.vintage</groupId>
+					<artifactId>junit-vintage-engine</artifactId>
+				</exclusion>
+			</exclusions>
+		</dependency>
+
+		<!-- GraphQL java dependency -->
+		<dependency>
+			<groupId>com.graphql-java</groupId>
+			<artifactId>graphql-java</artifactId>
+			<version>${graphql.java.version}</version>
+		</dependency>
+
+		<!-- GrpahQL Java Spring Boot Starter artifact provides a HTTP endpoint on ${graphql.url} with the default value "/graphql" just by being on the classpath -->
+		<dependency>
+			<groupId>com.graphql-java</groupId>
+			<artifactId>graphql-java-spring-boot-starter-webmvc</artifactId>
+			<version>${graphql.java.spring.boot.starter.webmvc.version}</version>
+		</dependency>
+
+		<dependency>
+			<groupId>com.google.guava</groupId>
+			<artifactId>guava</artifactId>
+			<version>20.0</version>
+		</dependency>
+	</dependencies>
+
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-maven-plugin</artifactId>
+			</plugin>
+		</plugins>
+	</build>
+
+</project>
