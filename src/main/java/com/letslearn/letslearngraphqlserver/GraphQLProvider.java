@@ -71,6 +71,7 @@ public class GraphQLProvider {
                 .type(TypeRuntimeWiring.newTypeWiring("Book").dataFetcher("title", graphQLDataFetchers.getTitleDataFetcher()))
                 .type(TypeRuntimeWiring.newTypeWiring("Book").dataFetcher("author", graphQLDataFetchers.getAuthorDataFetcher()))
                 .type(TypeRuntimeWiring.newTypeWiring("Author").dataFetcher("books", graphQLDataFetchers.getBooksForAnAuthor()))
+                .type(TypeRuntimeWiring.newTypeWiring("Author").dataFetcher("fullName", graphQLDataFetchers.getAuthorFullName()))
                 .type(TypeRuntimeWiring.newTypeWiring("Mutation").dataFetcher("createBook", graphQLDataFetchers.createBook()))
                 .type(TypeRuntimeWiring.newTypeWiring("Mutation").dataFetcher("deleteBook", graphQLDataFetchers.deleteBook()))
                 .build();

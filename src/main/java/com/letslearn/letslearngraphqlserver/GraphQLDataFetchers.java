@@ -92,4 +92,11 @@ public class GraphQLDataFetchers {
             return "Deleted book: " + id;
         };
     }
+
+    public DataFetcher getAuthorFullName() {
+        return dataFetchingEnvironment -> {
+            Author author = dataFetchingEnvironment.getSource();
+            return author.getFirstName() + " " + author.getLastName();
+        };
+    }
 }
